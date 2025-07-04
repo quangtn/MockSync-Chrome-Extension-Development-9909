@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MockSync Control Panel</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>MockSync</h1>
+      <div class="version">v1.0.0</div>
+    </div>
+    
+    <div class="main-controls">
+      <div class="toggle-section">
+        <label class="toggle-switch">
+          <input type="checkbox" id="wireframeMode">
+          <span class="slider">
+            <span class="slider-text">Wireframe Mode</span>
+          </span>
+        </label>
+      </div>
+      
+      <div class="control-grid">
+        <button class="control-btn" id="textMode">
+          <span class="icon">📝</span>
+          <span>Text Mode</span>
+        </button>
+        
+        <button class="control-btn" id="imageMode">
+          <span class="icon">🖼️</span>
+          <span>Image Mode</span>
+        </button>
+        
+        <button class="control-btn" id="aiMode">
+          <span class="icon">🤖</span>
+          <span>AI Mode</span>
+        </button>
+        
+        <button class="control-btn" id="exportMode">
+          <span class="icon">💾</span>
+          <span>Export</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="ai-section" id="aiSection">
+      <h3>AI Content Generation</h3>
+      <div class="input-group">
+        <label for="contentType">Content Type:</label>
+        <select id="contentType">
+          <option value="headline">Headlines</option>
+          <option value="body">Body Text</option>
+          <option value="cta">Call to Action</option>
+          <option value="description">Description</option>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label for="toneStyle">Tone/Style:</label>
+        <select id="toneStyle">
+          <option value="professional">Professional</option>
+          <option value="casual">Casual</option>
+          <option value="friendly">Friendly</option>
+          <option value="technical">Technical</option>
+          <option value="creative">Creative</option>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label for="language">Language:</label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <option value="it">Italian</option>
+        </select>
+      </div>
+      
+      <button class="generate-btn" id="generateContent">Generate Content</button>
+    </div>
+    
+    <div class="history-section">
+      <h3>History</h3>
+      <div class="history-controls">
+        <button class="history-btn" id="undoBtn">↶ Undo</button>
+        <button class="history-btn" id="redoBtn">↷ Redo</button>
+        <button class="history-btn" id="resetBtn">🔄 Reset</button>
+      </div>
+    </div>
+    
+    <div class="export-section" id="exportSection">
+      <h3>Export Options</h3>
+      <div class="export-controls">
+        <button class="export-btn" id="exportHtml">Export HTML</button>
+        <button class="export-btn" id="exportCss">Export CSS</button>
+        <button class="export-btn" id="saveVersion">Save Version</button>
+      </div>
+    </div>
+    
+    <div class="status-bar">
+      <span id="statusText">Ready</span>
+      <span id="modificationCount">0 modifications</span>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

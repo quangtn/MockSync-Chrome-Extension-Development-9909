@@ -1,0 +1,153 @@
+/* MockSync Content Styles */
+.mockSync-wireframe {
+  position: relative;
+}
+
+.mockSync-wireframe * {
+  outline: 1px solid rgba(102, 126, 234, 0.2) !important;
+}
+
+.mockSync-highlighted {
+  outline: 2px solid #667eea !important;
+  outline-offset: 2px !important;
+  cursor: pointer !important;
+  transition: outline 0.2s ease !important;
+}
+
+.mockSync-selected {
+  outline: 3px solid #764ba2 !important;
+  outline-offset: 2px !important;
+  position: relative !important;
+}
+
+.mockSync-selected::before {
+  content: 'Selected';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background: #764ba2;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  z-index: 999998;
+}
+
+.mockSync-modified {
+  background: rgba(102, 126, 234, 0.1) !important;
+  border-radius: 4px !important;
+  position: relative !important;
+}
+
+.mockSync-modified::after {
+  content: 'Modified';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background: #667eea;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  z-index: 999998;
+}
+
+.mockSync-ai-target {
+  background: rgba(118, 75, 162, 0.1) !important;
+  border-radius: 4px !important;
+  position: relative !important;
+}
+
+.mockSync-ai-target::after {
+  content: 'AI Target';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background: #764ba2;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  z-index: 999998;
+}
+
+/* Mode-specific cursors */
+.mockSync-mode-text .mockSync-highlighted {
+  cursor: text !important;
+}
+
+.mockSync-mode-image .mockSync-highlighted {
+  cursor: crosshair !important;
+}
+
+.mockSync-mode-ai .mockSync-highlighted {
+  cursor: help !important;
+}
+
+/* Toolbar animations */
+.mockSync-toolbar-visible {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #mockSync-toolbar {
+    top: 10px;
+    right: 10px;
+    padding: 12px;
+  }
+  
+  .toolbar-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .toolbar-controls {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .toolbar-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mockSync-highlighted {
+    outline: 3px solid #000 !important;
+  }
+  
+  .mockSync-selected {
+    outline: 4px solid #000 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .mockSync-highlighted,
+  .mockSync-selected,
+  .mockSync-modified,
+  .mockSync-ai-target {
+    transition: none !important;
+  }
+  
+  .mockSync-toolbar-visible {
+    animation: none !important;
+  }
+}
